@@ -1,0 +1,116 @@
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+textarea{
+    resize: none;
+    height: 260px !important;
+}
+input[type=text],textarea{
+    font-weight: bold;
+    color:#4d4d4d !important;
+    &::placeholder{
+        font-weight: bold;
+        color:#a3a3a3 !important;
+    }
+}
+.form{
+    border-width: 0 !important;
+    &::-webkit-scrollbar{width: 0;}
+    &::-webkit-scrollbar-thumb{width: 100%;}
+}
+
+#root{
+    width: 100vw;
+    height: 100vh;
+    .form-control{
+        margin: .5em 0;
+        box-shadow: none !important;
+        &#floating_for{
+            margin: 0;
+        }
+
+    }
+    .input-group-text{
+        border:none;
+        .accordion-button{
+            border:1px solid #dee2e6;
+            border-left: none;
+            box-shadow: none !important;
+            border-radius: 0 8px 8px 0;
+            width: 100%;
+            height: 100%;
+            &:not(.collapsed){
+                background-color: white;
+                box-shadow: none;
+            }
+        }
+    }
+
+    .contentFileInserted{
+        &::-webkit-scrollbar{
+            width: 4px;
+            background-color: transparent;
+        }
+        &::-webkit-scrollbar-thumb{
+            width: 100%;
+            background-color: #dee2e6;
+            border-radius: 15px;
+        }
+    }
+
+    @media (min-width: 576px),(min-width: 375px){
+        .contentFileInserted{
+            height: 95px;
+        }
+        .form{
+            height: 100vh !important;
+        }
+    }
+    @media (min-width: 768px){
+        .contentFileInserted{
+            height: 100px ;
+        }
+        .form{
+            height: 700px !important;
+        }
+    }
+    @media (min-width: 992px){
+        .contentFileInserted{
+            height: 260px ;
+        }
+        .form{
+            height: 500px !important;
+        }
+    }
+    
+    .toggleEmoji{
+        bottom: 0;
+        right: 7em;
+        transform-origin: bottom right;
+        transform: scale(0);
+        transition: transform .3s ease;
+        &.--active{
+            transform: scale(1);
+        }
+    }
+
+    .box_files{
+        i{transform: scale(2);}
+        .file_img{color: #fdfa62;}
+        .file_video{color: #fd6262;}
+        .file_audio{color: #fdbf62;}
+        .file_txt{color: #62e6fd;}
+        .file_docx{color: #6279fd;}
+        .file_excel{color: #81fd62;}
+        .file_pdf{color: #fd6289;}
+        .file_zip{color: #e6fd62;}
+        .file_exe{color: #f862fd;}
+    }
+}
+
+
+
