@@ -6,7 +6,9 @@ import {config} from "dotenv"
 config();
 
 const app = express();
-app.use(cors());
+app.use(cors(
+    {origin: process.env.CONNECTION_URL_FRONTEND}
+));
 app.use(express.json());
 
 
