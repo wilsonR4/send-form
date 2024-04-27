@@ -20,7 +20,7 @@ const myToast = myAlert.mixin({
 });
 
 function App() {
-  const vrENV = import.meta.env.CONNECTION_URL;
+  const vrENV = import.meta.env.VITE_CONNECTION_URL;
   const [values, setValues] = useState({
     name_lastName: "",
     toEmail: "",
@@ -96,7 +96,7 @@ function App() {
       if (values.toEmail.length > 0) {
         const formData = new FormData();
         formData.append("name_lastName", values.name_lastName);
-        formData.append("forEmail", values.toEmail);
+        formData.append("toEmail", values.toEmail);
         formData.append("ccEmail", values.ccEmail);
         formData.append("ccoEmail", values.ccoEmail);
         formData.append("subjectEmail", values.subjectEmail);
