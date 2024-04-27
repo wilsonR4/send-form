@@ -20,6 +20,7 @@ const myToast = myAlert.mixin({
 });
 
 function App() {
+  const vrENV = import.meta.env.CONNECTION_URL;
   const [values, setValues] = useState({
     name_lastName: "",
     toEmail: "",
@@ -41,8 +42,8 @@ function App() {
           e.target.value = "";
           setValues((previewArray) => ({
             ...previewArray,
-            toEmail: [...previewArray.forEmail, value.slice(0, -1)],
-          }));
+            toEmail: [...previewArray.toEmail, value.slice(0, -1)],
+          }))
         } else {
           console.log("invalid");
         }
@@ -104,7 +105,7 @@ function App() {
           formData.append("filesEmail", item);
         });
         axios
-          .post("http://localhost:3001/sendEmail", formData, {
+          .post(`${vrENV}/sendEmail`, formData, {
             headers: { "Content-Type": "multipart/form-data" },
           })
           .then((res) => {
